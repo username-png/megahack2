@@ -18,7 +18,15 @@
                     aria-haspopup="true" aria-expanded="false">Produtos</button>
 
             </li>
-            {{#if user.erepresentante}}
+            {{#if user.evendedor}}
+             <li class="nav-item dropdown p-1">
+                <button type="button" class="btn btn-primary btn-block" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"> Administração </button>
+                <div class="dropdown-menu bg-primary">
+                    <a class="dropdown-item bg-primary text-white" href="/">Cadastrar Produtos</a>
+                    <a class="dropdown-item bg-primary text-white" href="/">Vendas Efetuadas</a>
+                </div>
+            </li>
             {{/if}}
             {{#if user.eadmin}}
             <li class="nav-item dropdown p-1">
@@ -45,7 +53,7 @@
 
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/usuarios">Painel de Controle</a>
-                <a class="dropdown-item" href="">Editar Dados</a>
+                <a class="dropdown-item" href="/usuarios/edit">Editar Dados</a>
 
             </div>
 

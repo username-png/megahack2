@@ -21,55 +21,42 @@ const Usuario = new Schema({
     },
     endereco: {
         type:String,
-        required:true
+        required:false
     },
 
     numero: {
         type:String,
-        required:true
+        required:false
     },
 
     bairro: {
         type:String,
-        required:true
+        required:false
     },
 
     cidade: {
         type:String,
-        required:true
+        required:false
     },
 
     uf: {
         type:String,
-        required:true
+        required:false
     },
 
     cep: {
         type:String,
-        required:true
+        required:false
     },
-
-    email: {
-        type:String,
-        required:true
-    },
-
-
-
-
-
-
-
-
     eadmin: {
         type: Number,
         default: 0
     },
-    epagante: {
+    ecliente: {
         type: Number,
-        default: 0
+         default: 0
     },
-    erepresentante: {
+    evendedor: {
         type: Number,
         default: 0
     },

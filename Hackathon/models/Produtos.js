@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 
 const Produto = new Schema({
-
     vendedor:{
         type: Schema.Types.ObjectId,
         ref:"vendedor", required:true},
