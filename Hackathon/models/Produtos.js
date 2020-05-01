@@ -8,6 +8,10 @@ const Produto = new Schema({
         type: Schema.Types.ObjectId,
         ref:"vendedor", required:true},
 
+    categoria:{
+        type: Schema.Types.ObjectId,
+        ref:"categoria", required:true},
+
     nome:{
         type:String,
     },
