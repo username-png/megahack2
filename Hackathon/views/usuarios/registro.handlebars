@@ -6,12 +6,9 @@
 
 <div class="card mb-3 text-center" style="max-width: 19rem;margin:0 auto; margin-top:30px">
     <div class="card-header text-white bg-dark border">
-        <h5> Cadastro</h5>
+        <h5> Efetue Seu Cadastro</h5>
     </div>
     <div class="card-body text-dark">
-
-
-
 
 <form class="needs-validation" action="" method="post" novalidate>
     <div class="mt-2">
@@ -39,11 +36,6 @@
     <input type="password" id="senha2" name="senha2" class="form-control" required>
     <div id="msgSenha2" class="invalid-feedback"></div>
     </div>
-
-
-
-
-
     </div>
 
 
@@ -79,17 +71,11 @@
             campoCpf.value = campoCpf.value.replace(/(\d{3})(\d{1,2})/,"$1-$2")
 
             window.cpf = campoCpf.value
-
-
-
                 window.d1 = cpf.substring(0, 3)
                 window.d2 = cpf.substring(4, 7)
                 window.d3 = cpf.substring(8, 11)
                 window.d = cpf.substring(12, 14)
-
                 const cpfzao = d1 + d2 + d3 + d
-
-
                 // Elimina CPFs invalidos conhecidos
                 if (cpfzao.length != 11 ||
                 cpfzao == "00000000000" ||
@@ -251,26 +237,14 @@
 
            })
 
-
-
-
-
-
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
 
-
-
-
-
     //========Valida Nome==================
-
-
             window.nome = campoNome.value
-
                 if (nome.length < 1)
                 {
                     campoNome.classList.remove("is-valid")
@@ -278,16 +252,13 @@
                     msgNome.innerHTML = "Nome inválido";
                      event.preventDefault();
                      event.stopPropagation();
-
                 }
                 else{
                 campoNome.classList.remove("is-invalid")
                 campoNome.classList.add("is-valid")
-
                     }
 
         //========Valida Email===================
-
 
         const usuario = email.value.substring(0, email.value.indexOf("@"));
         const dominio = email.value.substring(email.value.indexOf("@")+ 1, email.value.length);
@@ -314,13 +285,7 @@
                     event.stopPropagation();
 
         }
-
-
-          //==========Valida Senha==========================
-
-
-
-
+                  //==========Valida Senha==========================
        if (senha.value == "")
        {
             senha.classList.remove("is-valid")
@@ -346,18 +311,10 @@
             event.stopPropagation();
 
        }else{
-
-
         senha.classList.remove("is-invalid")
         senha.classList.add("is-valid")
             msgSenha.innerHTML = "";
-
        }
-
-
-
-
-
        if (senha.value != senha2.value )
        {
            senha2.classList.remove("is-valid")
@@ -365,43 +322,28 @@
              msgSenha2.innerHTML = "Senhas Diferentes";
            event.preventDefault();
             event.stopPropagation();
-
        }
 
        if(senha2.value.length < 1 && senha.value.length < 1){
-
            senha2.classList.remove("is-valid")
             senha2.classList.remove("is-invalid")
              msgSenha2.innerHTML = "Senhas Vazias";
            event.preventDefault();
             event.stopPropagation();
-
-
        }
-
-
        if(senha.value == senha2.value && senha2.value.length != 0 && senha.value.length != 0){
             senha2.classList.remove("is-invalid")
         senha2.classList.add("is-valid")
        msgSenha2.innerHTML = "";
        }
-
-
-
           //===============Valida CNPJ===========
 
             window.cpf = campoCpf.value
-
-
-
                 window.d1 = cpf.substring(0, 3)
                 window.d2 = cpf.substring(4, 7)
                 window.d3 = cpf.substring(8, 11)
                 window.d = cpf.substring(12, 14)
-
                 const cpfzao = d1 + d2 + d3 + d
-
-
                 // Elimina CPFs invalidos conhecidos
                 if (cpfzao.length != 11 ||
                 cpfzao == "00000000000" ||
@@ -461,17 +403,10 @@
                              event.stopPropagation();
                         return false;
                     };
-
-
-
-
       }, false);
     });
   }, false);
 })();
-
-
-
 
 		</script>
 

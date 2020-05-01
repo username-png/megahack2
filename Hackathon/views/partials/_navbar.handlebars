@@ -12,28 +12,15 @@
             <li class="nav-item p-1">
                 <a  href="/" type="button" class="btn btn-primary btn-block">Home</a>
             </li>
-
             {{#if user}}
-
-
             <li class="nav-item dropdown p-1">
                 <button type="button" class="btn btn-primary btn-block" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Cadastros</button>
-                <div class="dropdown-menu bg-primary ">
-                    <a class="dropdown-item bg-primary text-white" href="/adubos">Exemplo</a>
-                </div>
+                    aria-haspopup="true" aria-expanded="false">Produtos</button>
+
             </li>
-
             {{#if user.erepresentante}}
-
-
-            
-
-
             {{/if}}
-
             {{#if user.eadmin}}
-
             <li class="nav-item dropdown p-1">
                 <button type="button" class="btn btn-primary btn-block" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"> Administração </button>
@@ -43,9 +30,7 @@
             </li>
         </ul>
 
-
         {{/if}}
-
         {{/if}}
 
     </div>
@@ -60,16 +45,18 @@
 
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/usuarios">Painel de Controle</a>
+                <a class="dropdown-item" href="">Editar Dados</a>
+
             </div>
 
              <div class="dropdown-menu">
-                <a class="dropdown-item text-white" href="">Editar Dados</a>
+                <a class="dropdown-item " href="">Editar Dados</a>
             </div>
         </li>
 
 
         <li class="nav-item">
-           <a class="nav-link btn text-white bg-danger btn-block"  href="/usuarios/logout">Sair</a> 
+           <a class="nav-link btn text-white bg-danger btn-block"  href="/usuarios/logout">Sair</a>
         </li>
     </ul>
 

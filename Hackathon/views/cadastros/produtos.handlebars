@@ -1,10 +1,8 @@
 <div class="nav mb-2 mt-4 mb-4">
 
    <div class="card-header bg-dark text-white ml-4 mt-2 mb-2 shadow  rounded ">
-        <h3 class="card-title"> Fertilizantes Atualmente Cadastrados</h3>
+        <h3 class="card-title"> Produtos </h3>
     </div>
-
-
 
     <div class="nav-item ml-auto mr-4">
         <a href="/adubos/add"><button class="btn btn-success text-white shadow">Cadastrar novo Fertilizante</button></a>
@@ -21,11 +19,8 @@
                 <h5 class="" >{{nome_adubo}}</h5>
             </div>
             <div class="card-body p-2">
-
                 <p class="card-text"><strong>Classificação:</strong> {{classificacao1}}</p>
-
                 <p class="card-text"><strong>Classificação:</strong> {{classificacao2}}</p>
-
                 <p class="card-text"><strong>Quantidade:</strong> {{qtd}} kg</p>
             </div>
             <div class="card-footer bg-dark text-center">
@@ -71,7 +66,7 @@
     {{else}}
 
      <div class="mt-4 ml-4">
-        <h5>Nenhum Fertilizante Atualmente Cadastrado no Sistema.</h5>
+        <h5>Nenhum Produto Cadastrado Nessa Categoria</h5>
     </div>
 
     {{/each}}

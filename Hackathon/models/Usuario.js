@@ -19,6 +19,48 @@ const Usuario = new Schema({
         type: String,
         required: true
     },
+    endereco: {
+        type:String,
+        required:true
+    },
+
+    numero: {
+        type:String,
+        required:true
+    },
+
+    bairro: {
+        type:String,
+        required:true
+    },
+
+    cidade: {
+        type:String,
+        required:true
+    },
+
+    uf: {
+        type:String,
+        required:true
+    },
+
+    cep: {
+        type:String,
+        required:true
+    },
+
+    email: {
+        type:String,
+        required:true
+    },
+
+
+
+
+
+
+
+
     eadmin: {
         type: Number,
         default: 0
@@ -31,51 +73,9 @@ const Usuario = new Schema({
         type: Number,
         default: 0
     },
-    dependentes: [{
-        type: Schema.Types.ObjectId,
-        ref: 'usuarios'
-    }],
-    fornecedor: [{
-        type: Schema.Types.ObjectId,
-        ref: 'usuarios'
-    }],
-    plano: {
-        type: Schema.Types.ObjectId,
-        ref: 'planos'
-    },
     date: {
         type: Date,
         default: Date.now()
-    },
-    credito_atual: {
-        type: Number,
-        default: 0
-    },
-
-    creditos_usados: {
-        type: Number,
-        default: 0
-    },
-    lotes_criados: {
-        type: Number,
-        default: 0
-    },
-    vencimento_parcela: {
-        type: Date,
-    },
-    data_1_pagamento: {
-        type: Date,
-    },
-    tipo_pagamento: {
-        type: String,
-
-    },
-    prox_pagamento: {
-        type: Date,
-    },
-    status_pago: {
-        type: Number,
-        default: 0
     },
 
 });

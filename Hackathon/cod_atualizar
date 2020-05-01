@@ -1,0 +1,129 @@
+<div class="row mt-4">
+    <div class="col-md-12">
+<div class="card shadow mb-2 bg-fundo-cadastro rounded-top border border-dark"  >
+    <div class="card-header text-black bg-page-header">
+        <h4 class="card-title">Informe Seus Dados</h4>
+    </div>
+
+    <div class="card-body">
+        <form class="needs-validation" action="" method="POST" novalidate>
+            <div class="form-row mt-2">
+
+                <div class="col-md-6 mb-3">
+                    <label for="nome" class="text-form">Nome</label>
+                    <input required type="text" id="nome" name="nome" class="form-control">
+                </div>
+                <div class="col-md-3 mb-3">
+                   <label for="cpf">CPF: </label>
+                    <input type="text" id="cpf" maxlength="14" name="cpf" class="form-control" required>
+                    <div id="msgCpf" class="invalid-feedback"></div>
+                </div>
+            <div class="col-md-3 mb-3">
+                 <label for="email">Email: </label>
+                 <input type="email" id="email" name="email"  class="form-control" required>
+                 <div id="msgEmail" class="invalid-feedback"></div>
+             </div>
+
+
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-6 mb-3">
+                    <label for="endereco"  class="text-form"> Endereço </label>
+                    <input required type="text" id="endereco" name="endereco_produtor" class="form-control">
+                </div>
+                <div class="col-md-1 mb-3">
+                    <label for="numero"  class="text-form">N° </label>
+                    <input required type="number" id="numero" name="numero_produtor" class="form-control">
+                </div>
+                <div class="col-md-5 mb-3">
+                    <label for="bairro"  class="text-form">Bairro </label>
+                    <input required type="text" id="bairro" name="bairro_produtor" class="form-control">
+                </div>
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="col-md-5 mb-3">
+
+                    <label for="cidade"  class="text-form">Cidade </label>
+                    <input required type="text" id="cidade" name="cidade_produtor" class="form-control">
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <label for="uf"  class="text-form">UF </label>
+                    <select name="uf_produtor" id="uf" class="text-form custom-select" required>
+                        <option selected hidden value="" selected>Estado</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AM">AM</option>
+                        <option value="AP">AP</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MG">MG</option>
+                        <option value="MS">MS</option>
+                        <option value="MT">MT</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="PR">PR</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="RS">RS</option>
+                        <option value="SC">SC</option>
+                        <option value="SE">SE</option>
+                        <option value="SP">SP</option>
+                        <option value="TO">TO</option>
+                    </select>
+
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <label for="cep"  class="text-form">CEP </label>
+                    <input required type="text" maxlength="10" id="cep" name="cep_produtor" class="form-control cep">
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="telefone"  class="text-form">Telefone </label>
+                    <input required type="text" id="fone" maxlength="14" name="fone_produtor" class="form-control telefone">
+                </div>
+            </div>
+
+           <div class="form-row">
+                <div class="col-md-2 mb-3">
+                     <label for="senha">Senha: </label>
+                         <input type="password" id="senha" name="senha" class="form-control" required>
+                        <div id="msgSenha" class="invalid-feedback"></div>
+                    </div>
+                 <div class="col-md-2 mb-3">
+                 <label for="senha2">Digite a senha novamente: </label>
+                    <input type="password" id="senha2" name="senha2" class="form-control" required>
+                     <div id="msgSenha2" class="invalid-feedback"></div>
+                    </div>
+                  </div>
+
+
+
+
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-md-3">
+                <button type="submit" class="btn mb-2 btn-cadastro btn-block text-black">Efetuar Cadastro</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>

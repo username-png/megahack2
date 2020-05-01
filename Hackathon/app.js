@@ -13,7 +13,7 @@ const cors = require('cors');
 const raiz = require("./routes/raiz")
 const usuarios = require('./routes/usuario');
 
-const adubos = require("./routes/rotaadubo");
+
 
 
 
@@ -88,7 +88,7 @@ app.use((req, res, next) => {
 //-------------------------------
 app.use('/', raiz)
 app.use('/usuarios', usuarios)
-app.use('/adubos', adubos)
+
 
 
 

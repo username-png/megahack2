@@ -4,15 +4,14 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-require("../models/Insumos");
+require("../models/Produtos");
 const {eCadastrado} = require("../helpers/eCadastrado")
-const Adubo = mongoose.model("insumos");
+const Produto = mongoose.model("produto");
 //rota que vai exibir os produtores e um link para o cadastro
 router.get("/", eCadastrado,  (req, res) => {
     if (req.user) {
-        Adubo.find({
-             usuario: req.user.id, tipo:0 },)
-            .sort({ nome_adubo: "desc" })
+        Produto.find({
+             usuario: req.user.id },)
             .then((adubos) => {
                 res.render("cadastros/adubo", { adubos: adubos });
             })
@@ -33,8 +32,8 @@ router.get("/add", eCadastrado,  (req, res) => {
 });
 // //ROTA PARA CADASTRO DE ADUBOS
 router.post("/novo", eCadastrado,  (req, res) => {
-   
-        
+
+
         const novoAdubo = {
             //aqui os campos que seram inseridos no BD
             nome_adubo: (req.body.nome_adubo),
@@ -59,7 +58,7 @@ router.post("/novo", eCadastrado,  (req, res) => {
 
                 res.redirect("/");
             });
-    
+
 });
 
 //rota para abrir um novo pagina com ADUBO, exibir e salvar o id
@@ -82,7 +81,7 @@ router.get("/edit/:id", eCadastrado,  (req, res) => {
 //ROATA PARA EDIÇÃO DA GLEBA
 router.post('/edit', eCadastrado,  (req, res)=>{
 
-   
+
     Adubo.findOne({_id: req.body.id}).then((adubo)=>{//pesquisa uma categoria q tem um id
             adubo.nome_adubo= req.body.nome_adubo,
             adubo.classificacao1= req.body.classificacao1,
