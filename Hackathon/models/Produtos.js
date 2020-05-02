@@ -3,29 +3,34 @@ const Schema = mongoose.Schema;
 
 
 const Produto = new Schema({
-    vendedor:{
+    vendedor: {
         type: Schema.Types.ObjectId,
-        ref:"vendedor", required:true},
-
-    categoria:{
-        type: Schema.Types.ObjectId,
-        ref:"categoria", required:true},
-
-    nome:{
-        type:String,
+        ref: "vendedor", required: true
     },
-    descricao:{
-        type:String,
+    // categoria: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "categoria", required: true
+    // },
+    categoria: {
+        type: String,
     },
-    qtd_estoque:{
-        type:Number,
+    nome_produto: {
+        type: String,
     },
-    preco:{
-        type:Number,
-    },
-
-
-
+    descricao: [{
+        preco: {
+            type: Number
+        },
+        estoque: {
+            type: Number,
+        },
+        cor: {
+            type: String,
+        },
+        tamanho: {
+            type: String,
+        },
+    }],
 });
 
 

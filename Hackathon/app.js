@@ -12,6 +12,7 @@ const cors = require('cors');
 //importando rotas criadas
 const raiz = require("./routes/raiz")
 const usuarios = require('./routes/usuario');
+const produtos = require('./routes/rotaproduto');
 
 
 
@@ -88,6 +89,7 @@ app.use((req, res, next) => {
 //-------------------------------
 app.use('/', raiz)
 app.use('/usuarios', usuarios)
+app.use('/produtos', produtos)
 
 
 
