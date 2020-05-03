@@ -9,95 +9,110 @@
 
 <div class="row mt-4">
     <div class="col-md-12">
-<div class="card shadow mb-2  rounded-top border border-dark" style="border-radius: 16px">
-    <div class="card-header text-white bg-primary"><h4 class="card-title">Informe os Dados da Produto</h4></div>
+        <div class="card shadow mb-2  rounded-top border border-dark" style="border-radius: 16px">
+            <div class="card-header text-white bg-primary">
+                <h4 class="card-title">Informe os Dados da Produto</h4>
+            </div>
 
-    <div class="card-body">
-
-<form class="needs-validation" action="/produtos/novo" method="POST" novalidate>
-
-<div class="form-row">
-
-    <div class="col-md-2 mb-3">
-        <label for="nome" class="text-form">Nome Do Produto </label>
-        <input type="text" id="nome" name="nome_produto" class="form-control"  required>
-    </div>
-    <div class="col-md-2 mb-3">
-        <label for="categoria" class="text-form">Categoria </label>
-        <select name="categoria" class="custom-select" required>
-                  <option selected hidden value="">Selecione a Categoria</option>
-                      <option value="Roupas">Roupas </option>
-                      <option value="Acessórios">Acessórios </option>
-            </select>
-     </div>
-      {{!-- <div class="col-md-4" >
-        <h4 class="d-inline-block">Adicionar Itens</h4>
-        <button type="button" id="add_item" class="d-inline-block  btn-success rounded-circle">+</button>
-        <button type="button" id="del_item" class="d-inline-block  btn-danger rounded-circle">-</button>
-        <div class="form-row">
-            <div class="col-md-12" id="form_item">
-                <div class="form-row">
-                    <div class="col-md-3">
-                        <label for="cor">Cor</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="tamanho">Tamanho</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="estoque">Estoque</label>
-                    </div>
-                     <div class="col-md-3">
-                        <label for="preco">Preço</label>
-                    </div>
+            <div class="card-body">
+                <div class="col-md-6">
+                    <form action="/produtos/novo/imagem" method="POST" class= "image-form"enctype="multipart/form-data">
+                        <label for='selecao-arquivo'>Selecionar uma imagem &#187;</label>
+                        <input type="file"  id='selecao-arquivo' name="image">
+                        <button type="submit"> Enviar </button>
+                    </form>
                 </div>
+
+                <form class="needs-validation" action="/produtos/novo" method="POST" novalidate>
+
+                    <div class="form-row">
+
+                        <div class="col-md-2 mb-3">
+                            <label for="nome" class="text-form">Nome Do Produto </label>
+                            <input type="text" id="nome" name="nome_produto" class="form-control" required>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="categoria" class="text-form">Categoria </label>
+                            <select name="categoria" class="custom-select" required>
+                                <option selected hidden value="">Selecione a Categoria</option>
+                                <option value="Roupas">Roupas </option>
+                                <option value="Acessórios">Acessórios </option>
+                            </select>
+                        </div>
+                        {{!-- <div class="col-md-4" >
+                            <h4 class="d-inline-block">Adicionar Itens</h4>
+                            <button type="button" id="add_item" class="d-inline-block  btn-success rounded-circle">+</button>
+                            <button type="button" id="del_item" class="d-inline-block  btn-danger rounded-circle">-</button>
+                            <div class="form-row">
+                                <div class="col-md-12" id="form_item">
+                                    <div class="form-row">
+                                        <div class="col-md-3">
+                                            <label for="cor">Cor</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="tamanho">Tamanho</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="estoque">Estoque</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="preco">Preço</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> --}}
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <h4 class="d-inline-block">Adicionar Item</h4>
+                            <button type="button" id="add_item"
+                                class="d-inline-block  btn-success rounded-circle">+</button>
+                            <button type="button" id="del_item"
+                                class="d-inline-block  btn-danger rounded-circle">-</button>
+                            <div class="form-row">
+                                <div class="col-md-12" id="form_item">
+                                    <div class="form-row">
+                                        <div class="col-md-3">
+                                            <label for="cor">Cor</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="tamanho">Tamanho</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="estoque">Estoque</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="preco">Preço</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <button type="submit" class="btn mb-2 btn-primary btn-block text-white shadow">Cadastrar
+                                    novo
+                                    Produto</button>
+                            </div>
+                            <div class="col-md-2 ml-auto">
+                                <a href="/produtos" class="btn btn-danger btn-block text-white">
+                                    < Voltar</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
 
             </div>
         </div>
-    </div> --}}
-</div>
-<div class="form-row">
-    <div class="col-md-4" >
-        <h4 class="d-inline-block">Adicionar Item</h4>
-        <button type="button" id="add_item" class="d-inline-block  btn-success rounded-circle">+</button>
-        <button type="button" id="del_item" class="d-inline-block  btn-danger rounded-circle">-</button>
-        <div class="form-row">
-            <div class="col-md-12" id="form_item">
-                <div class="form-row">
-                    <div class="col-md-3">
-                        <label for="cor">Cor</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="tamanho">Tamanho</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="estoque">Estoque</label>
-                    </div>
-                     <div class="col-md-3">
-                        <label for="preco">Preço</label>
-                    </div>
-                </div>
 
-            </div>
-        </div>
     </div>
-    </div>
-</div>
-    <div class="card-footer">
-            <div class="row">
-            <div class="col-md-3">
-                <button type="submit" class="btn mb-2 btn-primary btn-block text-white shadow">Cadastrar novo Produto</button>
-            </div>
-              <div class="col-md-2 ml-auto">
-                <a href="/produtos" class="btn btn-danger btn-block text-white"> < Voltar</a>
-            </div>
-            </div>
-        </form>
-</div>
-
-</div>
-</div>
-
-</div>
 </div>
 
 <script>
@@ -109,47 +124,45 @@
     const delItem = document.getElementById("del_item")
 
 
-    function Div(className, id){
-        var classNames='';
-        function splitClass(){
-            for(let i in className)
-            {
-                classNames = classNames+" "+className[i]
+    function Div(className, id) {
+        var classNames = '';
+        function splitClass() {
+            for (let i in className) {
+                classNames = classNames + " " + className[i]
             }
         }
         splitClass()
         var div = document.createElement('div');
-        if(id)
+        if (id)
             div.id = id;
-        if(className)
+        if (className)
             div.className = classNames
         return div
     }
     function Input(type, className, name, id) {
-        var classNames='';
-        function splitClass(){
-            for(let i in className)
-            {
-                classNames = classNames+" "+className[i]
+        var classNames = '';
+        function splitClass() {
+            for (let i in className) {
+                classNames = classNames + " " + className[i]
             }
         }
         splitClass()
         var input = document.createElement('input');
-        if(id)
+        if (id)
             input.id = id;
-        if(name)
+        if (name)
             input.name = name;
-        if(className)
+        if (className)
             input.className = classNames
-        if(type)
+        if (type)
             input.type = type
 
         return input
     }
 
-    function novoItem(){
+    function novoItem() {
 
-        var formRow  = Div(['form-row', 'mb-2', 'item'])
+        var formRow = Div(['form-row', 'mb-2', 'item'])
 
         var colunacor = Div(['col-md-3'])
         formRow.appendChild(colunacor)
@@ -182,15 +195,15 @@
         return formRow
     }
 
-    addItem.addEventListener("click", (e)=>{
+    addItem.addEventListener("click", (e) => {
         var item = novoItem()
         formItem.appendChild(item)
 
     })
-    delItem.addEventListener("click", (e)=>{
+    delItem.addEventListener("click", (e) => {
         var itens = document.getElementsByClassName('item')
 
-        itens[itens.length-1].remove()
+        itens[itens.length - 1].remove()
 
     })
 
@@ -200,26 +213,26 @@
 
 
 <script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-        window.msgErro = document.getElementById("msg")
-            msgErro.style.display = 'none'
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-           msgErro.style.display = 'block'
-                    msgErro.innerHTML = "Preencha todos os campos!"
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                window.msgErro = document.getElementById("msg")
+                msgErro.style.display = 'none'
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            msgErro.style.display = 'block'
+                            msgErro.innerHTML = "Preencha todos os campos!"
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
 </script>

@@ -1,0 +1,18 @@
+input[type='file'] {
+    display: none
+  }
+  
+  /* Aparência que terá o seletor de arquivo */
+
+  .image-form {
+    margin-left: -15px;
+  }
+
+  .selecao-arquivo label {
+    background-color: #3498db;
+    border-radius: 90px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 6px 20px
+  }

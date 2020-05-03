@@ -31,6 +31,11 @@ const Produto = new Schema({
             type: String,
         },
     }],
+    image:[{
+        type: String,
+        required: false,
+        trim: true
+    }]
 });
 
 
