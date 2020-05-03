@@ -1,10 +1,12 @@
 const fs = require('fs'),
       sharp = require('sharp');
+var path = require("path");
     
 exports.compressImage = (file, size) => {
   
  // Pegamos o PATH antigo e fazemos um tratamento com ele, para mudar a extensão do arquivo.
  const newPath = file.path.split('.')[0] + '.webp';
+ 
   
     return sharp(file.path) // Executamos o SHARP na imagem que queremos comprimir
   
@@ -24,8 +26,7 @@ exports.compressImage = (file, size) => {
 }
 
 exports.compressImage = (file, size) => {
-    const newPath = file.path.split('.')[0] + '.webp';
-
+    const newPath = file.path.split('.')[0] + '.webp';  
     return sharp(file.path)
         .resize(size)
         .toFormat('webp')
@@ -58,8 +59,8 @@ exports.compressImage = (file, size) => {
                     throw err;
                 }
             });
-
+            const name = path.basename(newPath)
             // Se o código chegou até aqui, deu tudo certo, então vamos retornar o novo caminho
-            return newPath;
+            return name;
         })
 }

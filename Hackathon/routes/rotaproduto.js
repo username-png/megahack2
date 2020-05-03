@@ -62,6 +62,7 @@ router.post("/novo", eCadastrado, (req, res) => {
         descricao: Itens(),
         image: nomeArquivo,
     }
+    itens=[]
     console.log(novoProduto)
     new Produto(novoProduto)
         .save()
@@ -76,9 +77,9 @@ router.post('/novo/imagem', multer.single('image'), (req, res, next) => {
 try{
     if (req.file) {
 
-            filehelper.compressImage(req.file, 100).then(newPath => {
+            filehelper.compressImage(req.file, 100).then(name => {
             req.flash('success_msg', 'imagem cadastrada com sucesso!');
-            nomeArquivo.push(newPath)
+            nomeArquivo.push(name)
 
             res.redirect('/produtos/add');
          })
