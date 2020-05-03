@@ -29,7 +29,7 @@ router.get("/", eCadastrado, (req, res) => {
 router.get("/add", eCadastrado, (req, res) => {
 
     res.render('cadastros/addprodutos');
-    
+
     if (nomeArquivo)
         console.log(nomeArquivo)
 
@@ -75,17 +75,17 @@ router.post("/novo", eCadastrado, (req, res) => {
 router.post('/novo/imagem', multer.single('image'), (req, res, next) => {
 try{
     if (req.file) {
-    
+
             filehelper.compressImage(req.file, 100).then(newPath => {
             req.flash('success_msg', 'imagem cadastrada com sucesso!');
             nomeArquivo.push(newPath)
-            
+
             res.redirect('/produtos/add');
          })
             .catch(err => console.log(err) );
     }else{
         req.flash('error_msg', 'Formato Invalido!');
-        
+
         res.redirect('/produtos/add');
     }
 }catch(err){
