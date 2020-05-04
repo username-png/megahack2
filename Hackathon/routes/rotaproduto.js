@@ -4,25 +4,25 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const filehelper = require('../helpers/file-helper')
-const multer =require('../config/multer')
-let nomeArquivo= [];
+const multer = require('../config/multer')
+let nomeArquivo = [];
 
 require("../models/Produtos");
 const { eCadastrado } = require("../helpers/eCadastrado")
 const Produto = mongoose.model("produto");
 
 router.get("/", eCadastrado, (req, res) => {
-    Produto.find({vendedor: req.user.id})
-    .then(produtos=>{
+    Produto.find({ vendedor: req.user.id })
+        .then(produtos => {
 
 
-        res.render("cadastros/produtos", {produtos: produtos});
-    })
-    .catch(err=>{
-        req.flash("error_msg",
-        "Erro ao listar Produtos!")
-        res.redirect("/");
-    })
+            res.render("cadastros/produtos", { produtos: produtos });
+        })
+        .catch(err => {
+            req.flash("error_msg",
+                "Erro ao listar Produtos!")
+            res.redirect("/");
+        })
 
 
 });
@@ -62,7 +62,7 @@ router.post("/novo", eCadastrado, (req, res) => {
         descricao: Itens(),
         image: nomeArquivo,
     }
-    itens=[]
+    itens = []
     console.log(novoProduto)
     new Produto(novoProduto)
         .save()
@@ -74,41 +74,63 @@ router.post("/novo", eCadastrado, (req, res) => {
 });
 
 router.post('/novo/imagem', multer.single('image'), (req, res, next) => {
-try{
-    if (req.file) {
+    try {
+        if (req.file) {
 
             filehelper.compressImage(req.file, 100).then(name => {
-            req.flash('success_msg', 'imagem cadastrada com sucesso!');
-            nomeArquivo.push(name)
+                req.flash('success_msg', 'imagem cadastrada com sucesso!');
+                nomeArquivo.push(name)
+
+                res.redirect('/produtos/add');
+            })
+                .catch(err => console.log(err));
+        } else {
+            req.flash('error_msg', 'Formato Invalido!');
 
             res.redirect('/produtos/add');
-         })
-            .catch(err => console.log(err) );
-    }else{
-        req.flash('error_msg', 'Formato Invalido!');
-
-        res.redirect('/produtos/add');
+        }
+    } catch (err) {
+        console.log(err)
     }
-}catch(err){
-    console.log(err)
-}
 });
 
 router.get("/detalhes/:id", eCadastrado, (req, res) => {
 
-    Produto.find({_id: req.params.id})
-    .then(produtos=>{
-        res.render("cadastros/detalhe_produto", {produtos: produtos});
-    })
-    .catch(err=>{
-        req.flash("error_msg",
-        "Erro ao listar Produtos!")
-        res.redirect("/");
-    })
+    Produto.find({ _id: req.params.id })
+        .then(produtos => {
+            res.render("cadastros/detalhe_produto", { produtos: produtos });
+        })
+        .catch(err => {
+            req.flash("error_msg",
+                "Erro ao listar Produtos!")
+            res.redirect("/");
+        })
 });
 
 
-router.post('/edit', eCadastrado, (req, res) => {
+router.post('/comprar/:id/:pd', eCadastrado, (req, res) => {
+
+    var a
+
+    Produto.findOne({ _id: req.params.id }).then(produtos => {
+        let i
+        for (i in produtos.descricao)
+            if (produtos.descricao[i]._id == req.params.pd) {
+
+                a = i
+            }
+
+
+    })
+        .then(produtos => {
+            Produto.updateOne({ _id: req.params.id, "descricao.$a.estoque": req.params.pd }, { $inc: { "descricao.$a.estoque": -1 } }, { new: true })
+            .then(a => {
+                console.log(a)
+                req.flash('success_msg', 'produto comprado com sucesso!');
+                res.redirect('/')
+            })
+        })
+
 
 })
 

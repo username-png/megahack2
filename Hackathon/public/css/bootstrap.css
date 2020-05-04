@@ -6316,6 +6316,7 @@ a.close.disabled {
   text-align: center;
   opacity: 0.5;
   transition: opacity 0.15s ease;
+  background-color: rgba(10,10,10,0.8);
 }
 
 @media (prefers-reduced-motion: reduce) {
