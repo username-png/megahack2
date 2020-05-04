@@ -1,0 +1,69 @@
+{{#each produtos}}
+
+<div class="nav mb-2 mt-2">
+    <div class="card-header bg-dark text-white mt-2 mb-2 shadow  rounded ">
+        <h3 class="card-title"> Produto Selecionado - {{nome_produto}} </h3>
+    </div>
+
+    <div class="nav-item ml-auto mr-4 mt-2">
+        <a href="/"><button class="btn btn-success text-white shadow">Voltar</button></a>
+    </div>
+</div>
+
+
+{{else}} {{/each}}
+
+<div class="row ">
+    <div class="col-md-12 ">
+        <table class="table table-hover table-dark ">
+            <thead>
+                <th scope="col">Cores Disponiveis</th>
+                <th scope="col">Tamanhos</th>
+                <th scope="col">Em Estoque</th>
+                <th scope="col">Preço</th>
+                <th scope="col"></th>
+            </thead>
+            <tbody>
+                {{#each produtos}}
+                <tr>
+                    <td>
+                        {{#each descricao}}
+                        <p> {{cor}} </p>
+                        {{else}} {{/each}}
+                    </td>
+                    <td>
+                        {{#each descricao}}
+                        <p> {{tamanho}} </p>
+                        {{else}} {{/each}}
+                    </td>
+                    <td>
+                        {{#each descricao}}
+                        <p> {{estoque}} </p>
+                        {{else}} {{/each}}
+                    </td>
+                    <td>
+                        {{#each descricao}}
+                        <p> {{preco}} </p>
+                        {{else}} {{/each}}
+                    </td>
+
+                    <td>
+                         {{#each descricao}}
+                    <p> <a href=""><button class="btn btn-sm btn-success text-white shadow">Comprar</button></a></p>
+
+                        {{else}} {{/each}}
+
+                    </td>
+
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="7">
+                        Nenhum Produto Cadastrado!
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

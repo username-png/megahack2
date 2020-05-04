@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
-        <img src="/img/logo_solido.png" width="30" height="auto" class="d-inline-block align-top" alt="">
+        <img src="/img/icon.png" width="30" height="auto" class="d-inline-block align-top" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
         aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -14,9 +14,7 @@
             </li>
             {{#if user}}
             <li class="nav-item dropdown p-1">
-                <button type="button" class="btn btn-primary btn-block" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Produtos</button>
-
+                 <a  href="/" type="button" class="btn btn-primary btn-block">Produtos</a>
             </li>
             {{#if user.evendedor}}
              <li class="nav-item dropdown p-1">
@@ -24,7 +22,6 @@
                     aria-haspopup="true" aria-expanded="false"> Administração </button>
                 <div class="dropdown-menu bg-primary">
                     <a class="dropdown-item bg-primary text-white" href="/produtos">Cadastrar Produtos</a>
-                    <a class="dropdown-item bg-primary text-white" href="/">Vendas Efetuadas</a>
                 </div>
             </li>
             {{/if}}

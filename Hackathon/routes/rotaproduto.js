@@ -94,10 +94,17 @@ try{
 }
 });
 
-router.get("/edit/:id", eCadastrado, (req, res) => {
-    d
+router.get("/detalhes/:id", eCadastrado, (req, res) => {
 
-
+    Produto.find({_id: req.params.id})
+    .then(produtos=>{
+        res.render("cadastros/detalhe_produto", {produtos: produtos});
+    })
+    .catch(err=>{
+        req.flash("error_msg",
+        "Erro ao listar Produtos!")
+        res.redirect("/");
+    })
 });
 
 
