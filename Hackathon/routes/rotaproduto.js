@@ -50,7 +50,7 @@ router.post("/novo", eCadastrado, (req, res) => {
             for (i in nomeCor)
                 arrayItens.push({ cor: nomeCor[i], tamanho: tamanho[i], estoque: estoque[i], preco: preco[i] })
         } else {
-            arrayItens.push({ cor: nomeCor[i], tamanho: tamanho[i], estoque: estoque[i], preco: preco[i] })
+            arrayItens.push({ cor: nomeCor, tamanho: tamanho, estoque: estoque, preco: preco })
         }
         return arrayItens
     }
