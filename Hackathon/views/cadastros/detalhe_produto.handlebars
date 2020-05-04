@@ -48,8 +48,10 @@
                     </td>
 
                     <td>
-                         {{#each descricao}}
-                    <p> <a href=""><button class="btn btn-sm btn-success text-white shadow">Comprar</button></a></p>
+                        {{#each descricao}}
+                        <form action="/produtos/comprar/{{../_id}}/{{_id}}" method="post">
+                            <p> <input type="submit" class="btn btn-sm btn-success text-white shadow" name="comprar" value="comprar" /></p>
+                        </form>
 
                         {{else}} {{/each}}
 
